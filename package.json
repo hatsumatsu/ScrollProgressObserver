@@ -1,0 +1,13 @@
+{
+  "name": "@superstructure.net/scrollprogressobserver",
+  "version": "0.0.1",
+  "description": "ScrollProgressObserver",
+  "main": "ScrollProgressObserver.js",
+  "type": "module",
+  "scripts": {},
+  "repository": "hatsumatsu/ScrollProgressObserver",
+  "license": "MIT",
+  "dependencies": {
+    "@superstructure.net/utils": "*"
+  }
+}
