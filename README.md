@@ -10,13 +10,36 @@ When do they enter and leave the viewport while scrolling? How far have they adv
 ## Usage
 
 ```js
-import {ScrollProgressObserver} from @superstructure.net/scrollprogressobserver';
+import { ScrollProgressObserver } from "@superstructure.net/scrollprogressobserver";
 
-const targetElement = document.querySelector( '.target' );
-const options = {}
+const targetElement = document.querySelector(".target");
+const options = {
+  // This configuration starts tracking the target element when its
+  // top edge passes a point 10vh from the viewport's bottom edge and
+  // stops tracking when the target elements bottom edge passes a
+  // point 20vh from the viewport's top edge.
+  //
+  // No worries, the default settings or fine, too.
+  startTargetEdge: "start",
+  endTargetEdge: "end",
+  startViewportEdge: 0.9,
+  endViewportEdge: 0.2,
 
-const observer = new ScrollProgressObserver( observer, options)
+  // Callbacks
+  onEnterBetweenEdges: () => {
+    console.log("target element tracking started.");
+  },
+  onLeaveBetweenEdges: () => {
+    console.log("target element tracking stopped.");
+  },
+  onScrollProgress: (progress) => {
+    console.log(
+      `target element has progressed ${progress * 100}% through the viewport.`
+    );
+  },
+};
 
+const observer = new ScrollProgressObserver(targetElement, options);
 ```
 
 ## Options
