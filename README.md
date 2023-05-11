@@ -16,7 +16,7 @@ const targetElement = document.querySelector(".target");
 const options = {
   // This configuration starts tracking the target element when its
   // top edge passes a point 10vh from the viewport's bottom edge and
-  // stops tracking when the target elements bottom edge passes a
+  // stops tracking when the target element's bottom edge passes a
   // point 20vh from the viewport's top edge.
   //
   // No worries, the default settings or fine, too.
@@ -52,7 +52,7 @@ Default: `y`
 
 ### `observeResize`
 
-Update the instance when the target element or the viewport ios resized. Uses `ResizeObserver` internally.
+Update the instance when the target element or the viewport is resized. Uses `ResizeObserver` internally.
 
 Default: `true`
 
