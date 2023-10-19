@@ -3,6 +3,11 @@
 Track the visibility and scroll progress of elements in the viewport.
 When do they enter and leave the viewport while scrolling? How far have they advanced through the viewport?
 
+## Demo
+
+https://codesandbox.io/s/scrollprogressobserver-js-demo-xnm2k7?file=/src/Demo.js
+
+
 ## Install
 
 `npm install '@superstructure.net/scrollprogressobserver'`
@@ -121,6 +126,3 @@ Called when tracking of the target element starts/ends. Can be controlled via `s
 
 Called every frame whil tracking of the target element is active. Receives a `progress` argument in the range `0...1`.
 
-## Demo
-
-_TO-DO_
