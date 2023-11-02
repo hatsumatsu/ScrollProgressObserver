@@ -7,7 +7,6 @@ When do they enter and leave the viewport while scrolling? How far have they adv
 
 https://codesandbox.io/s/scrollprogressobserver-js-demo-xnm2k7?file=/src/Demo.js
 
-
 ## Install
 
 `npm install '@superstructure.net/scrollprogressobserver'`
@@ -31,13 +30,13 @@ const options = {
   endViewportEdge: 0.2,
 
   // Callbacks
-  onEnterBetweenEdges: () => {
+  onEnter: () => {
     console.log("target element tracking started.");
   },
-  onLeaveBetweenEdges: () => {
+  onLeave: () => {
     console.log("target element tracking stopped.");
   },
-  onScrollProgress: (progress) => {
+  onProgress: (progress) => {
     console.log(
       `target element has progressed ${progress * 100}% through the viewport.`
     );
@@ -114,15 +113,14 @@ Default: `start`
 
 ### Callbacks
 
-#### `onEnterView` and `onLeaveView`
+#### `onEnter` and `onLeave`
 
-Called when the target element enters/leaves the viewport. Ignores `startTargetEdge`, `endTargetEdge`, `startViewportEdge` and `endViewportEdge`.
+Called when tracking of the target element starts/ends. Can be controlled via `startTargetEdge`, `endTargetEdge`, `startViewportEdge` and `endViewportEdge`. Receives the target element as first argument.
 
-#### `onLeaveViewBetweenEdges` and `onLeaveViewBetweenEdges`
+#### `onEnterViewport` and `onLeaveViewport`
 
-Called when tracking of the target element starts/ends. Can be controlled via `startTargetEdge`, `endTargetEdge`, `startViewportEdge` and `endViewportEdge`.
+Called when the target element enters/leaves the viewport. Ignores `startTargetEdge`, `endTargetEdge`, `startViewportEdge` and `endViewportEdge`. Receives the target element as first argument.
 
-#### `onViewProgress`
+#### `onProgress`
 
-Called every frame whil tracking of the target element is active. Receives a `progress` argument in the range `0...1`.
-
+Called every frame whil tracking of the target element is active. Receives `progress` in the range `0...1` as first argument and the target element as the second argument.

@@ -217,7 +217,7 @@ class ScrollProgressObserver {
 
     this.observeScroll();
 
-    this.options.onEnterViewport();
+    this.options.onEnterViewport(this.targetElement);
   }
 
   onObserverLeave() {
@@ -228,7 +228,7 @@ class ScrollProgressObserver {
 
     this.unobserveScroll();
 
-    this.options.onLeaveViewport();
+    this.options.onLeaveViewport(this.targetElement);
   }
 
   onFrame() {
@@ -247,7 +247,7 @@ class ScrollProgressObserver {
     );
 
     if (inViewProgress !== this.state.inViewProgress) {
-      this.options.onProgress(inViewProgress);
+      this.options.onProgress(inViewProgress, this.targetElement);
     }
 
     if (
@@ -258,7 +258,7 @@ class ScrollProgressObserver {
       console.log("ScrollProgressObserver.onEnter()");
 
       this.state.isInViewBetweenEdges = true;
-      this.options.onEnter();
+      this.options.onEnter(this.targetElement);
     }
 
     if (
@@ -268,7 +268,7 @@ class ScrollProgressObserver {
       console.log("ScrollProgressObserver.onLeave()");
 
       this.state.isInViewBetweenEdges = false;
-      this.options.onLeave();
+      this.options.onLeave(this.targetElement);
     }
 
     this.state.inViewProgress = inViewProgress;
