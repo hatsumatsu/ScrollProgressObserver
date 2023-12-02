@@ -23,7 +23,7 @@ const options = {
   // stops tracking when the target element's bottom edge passes a
   // point 20vh from the viewport's top edge.
   //
-  // No worries, the default settings or fine, too.
+  // No worries, the default settings are fine, too.
   startTargetEdge: "start",
   endTargetEdge: "end",
   startViewportEdge: 0.9,
